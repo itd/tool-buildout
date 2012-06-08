@@ -1,6 +1,10 @@
 #!/bin/bash
 echo -e "\n\n\nStarting ./bin/zeoserver \n\n"
-./bin/zeoserver start
+
+if [ -f ./bin/zeoserver ]
+  ./bin/zeoserver start
+  else echo -e "WTF? There's no zeoserver.\n   Maybe you need to run: python bootstrap.py"
+fi
 
 if [ -f ./bin/instance ]
     then echo -e "\n\n\nStarting ./bin/instance fg\n\n"
